@@ -15,7 +15,6 @@ $(document).ready(function() {
         event.preventDefault();	        
         $('#error-message').addClass("d-none");	        
         let userInput;
-        processInput();	        
         try {
             userInput = processInput();
         }
@@ -91,25 +90,19 @@ function checkDatesAreInFuture(dates){
 }
 
 function processDates(dates){
-    try {
-        let fromDate = dates.split(" to ")[0].split("-");
-        let toDate = dates.split(" to ")[1].split("-");
-        const datesObject = {
+
+    let fromDate = dates.split(" to ")[0].split("-");
+    let toDate = dates.split(" to ")[1].split("-");
+    const datesObject = {
         fromDay: fromDate[1],
         fromMonth: fromDate[0],
         fromYear: fromDate[2],
         toDay: toDate[1],
         toMonth: toDate[0],
         toYear: toDate[2]
-        }
-        checkDatesAreInFuture(datesObject);
-        return datesObject;
     }
-    catch(e) {
-        $('#error-message').removeClass("d-none");
-        $("#error-message").html("Please ensure that you have entered valid dates and try again.");
-        throw e;
-    }
+    checkDatesAreInFuture(datesObject);
+    return datesObject;
 }
 
 function addLoading() {

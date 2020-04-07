@@ -65,11 +65,15 @@
 
 
 /* INPUT FORM */
+.input-form {
+    padding: 0 30px;
+}
 .input-item {
     margin-bottom: 20px;
 }
 .form-title {
     margin-bottom: 4vh;
+    padding: 0 2vw;
     font-size: 45px;
 }
 ::placeholder {
