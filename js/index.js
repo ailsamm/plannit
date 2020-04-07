@@ -20,8 +20,7 @@ $(document).ready(function() {
         }
         catch(e) {
             $('#error-message').removeClass("d-none");
-            $("#error-message").html("Please ensure that you have completed the form correctly and try again.");
-            return;
+            $("#error-message").html(e.toString());
         }
         initiateApiCalls(userInput);
     })	   
@@ -72,9 +71,7 @@ function getCity(jsonData) {
         return jsonData.formatted_address;
     }
     catch(e) {
-        $('#error-message').removeClass("d-none");
-        $("#error-message").html("Please ensure that both of your locations are valid and try again.");
-        throw e;
+        throw new Error("Please ensure that both of your locations are valid and try again.");
     }
 }
 
@@ -91,18 +88,25 @@ function checkDatesAreInFuture(dates){
 
 function processDates(dates){
 
-    let fromDate = dates.split(" to ")[0].split("-");
-    let toDate = dates.split(" to ")[1].split("-");
-    const datesObject = {
+    try {
+        let fromDate = dates.split(" to ")[0].split("-");
+        let toDate = dates.split(" to ")[1].split("-");
+
+        const datesObject = {
         fromDay: fromDate[1],
         fromMonth: fromDate[0],
         fromYear: fromDate[2],
         toDay: toDate[1],
         toMonth: toDate[0],
         toYear: toDate[2]
+        }
+
+        checkDatesAreInFuture(datesObject);
+        return datesObject;
     }
-    checkDatesAreInFuture(datesObject);
-    return datesObject;
+    catch(e) {
+        throw new Error("Please ensure that you have entered valid dates and try again.");
+    }    
 }
 
 function addLoading() {
