@@ -5,6 +5,12 @@
 Say goodbye to multiple open tabs and trawling across the web for hours on end. Simply enter where you'd like to go and when and you will automatically be provided with details on flights, accommodations, restaurants, activities and a weather forecast for your destination.
 
 ----------------------------
+
+## Live Walkthrough
+![live walkthrough](./images/plannit.gif)
+
+----------------------------
+
 ## Screenshots
 ### Welcome page
 ![Welcome page](https://travel-quiz.s3-us-west-1.amazonaws.com/welcomePage.png)

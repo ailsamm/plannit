@@ -96,12 +96,11 @@ function fetchGeocoding(location) {
         })
         .then(responseJson => {
             let result = responseJson.results[0];
-            // need to handle if result is undefined
             return {
                 "city": getCity(result),
                 "lat": result.geometry.location.lat,
                 "lng": result.geometry.location.lng
-            };
+            }
         })
         .catch(e => {
             throw e;
