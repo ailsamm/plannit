@@ -3,7 +3,8 @@
 #### Welcome to Plannit, your one-stop site to take the guesswork out of trip planning.
 
 Say goodbye to multiple open tabs and trawling across the web for hours on end. Simply enter where you'd like to go and when and you will automatically be provided with details on flights, accommodations, restaurants, activities and a weather forecast for your destination.
-Built with Javascript, jQuery, Bootstrap, HTML5 & CSS3 and leveraging the power of multiple APIs (including several Google Cloud APIs).
+
+Built with Javascript, jQuery, Bootstrap, HTML5 & CSS3 and leveraging the power of multiple APIs (including several Google Cloud APIs) to fetch results.
 
 ----------------------------
 
